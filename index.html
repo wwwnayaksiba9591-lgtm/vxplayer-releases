@@ -1,33 +1,222 @@
-﻿<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>VXPlayer — Press play. Stay there.</title>
-<meta name="description" content="Meet VXPlayer, an independent video and music player for Android. Explore the player and download the latest release."><meta name="theme-color" content="#10110f">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VXPlayer — Video & Music Player for Android</title>
+<meta name="description" content="VXPlayer is a lightning-fast Android video and music player. No ads, no tracking, no nonsense.">
+<meta name="theme-color" content="#050510">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%236c5ce7'/><polygon points='38,25 38,75 78,50' fill='white'/></svg>">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-:root{--bg:#10110f;--panel:#191b17;--line:#30332b;--text:#f1f2e9;--muted:#a0a496;--lime:#d5fb73}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}a,button,summary{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--lime);outline-offset:5px}::selection{background:var(--lime);color:var(--bg)}.wrap{max-width:1300px;margin:auto;padding:0 48px}.nav{height:92px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:11px;font:700 24px 'Space Grotesk',sans-serif;letter-spacing:-1px}.logo{background:var(--lime);color:#15180e;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:17px;transform:rotate(-8deg)}.links{display:flex;gap:32px;align-items:center;font-size:13px;color:#c1c5b7}.small-cta{border:1px solid #4e5540;border-radius:99px;padding:12px 19px;color:var(--lime)}.hero{padding:65px 0 36px;position:relative}.overline{font-size:11px;letter-spacing:2px;font-weight:700;display:flex;align-items:center;gap:10px;text-transform:uppercase;color:#c0c6b3}.dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 16px #d5fb7355}.hero-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin:24px 0 38px}h1,h2,h3,p{margin:0}h1{font:500 clamp(60px,7.8vw,108px)/.98 'Space Grotesk',sans-serif;letter-spacing:-7px}h1 span{color:var(--lime)}.hero-aside{max-width:277px;padding-bottom:5px}.hero-aside p{font-size:15px;line-height:1.75;color:var(--muted);margin-bottom:22px}.button{display:inline-flex;align-items:center;justify-content:center;gap:22px;padding:17px 23px;background:var(--lime);color:#1a210e;border-radius:8px;border:1px solid var(--lime);font-size:14px;font-weight:700;transition:transform .2s,box-shadow .2s}.button:hover{transform:translateY(-3px);box-shadow:0 10px 30px #d5fb7320}.arrow{font-size:21px;line-height:1}.fine{font-size:10px;letter-spacing:.5px;color:var(--muted);margin-top:12px}.stage{position:relative;border:1px solid #505946;border-radius:18px;overflow:hidden;background:#172529;min-height:470px;isolation:isolate}.landscape{position:absolute;inset:0;background:radial-gradient(ellipse at 68% 28%,#e9c19d88,transparent 33%),linear-gradient(180deg,#485c64 0%,#8b9691 38%,#c7b9a0 55%,#2c4545 56%,#172522 100%);overflow:hidden;z-index:-2}.sun{position:absolute;top:85px;left:65%;width:56px;height:56px;border-radius:50%;background:#f9e4b1;box-shadow:0 0 90px #f6d59b99}.mountain{position:absolute;inset:0;background:#344d4b;clip-path:polygon(0 66%,8% 53%,14% 60%,30% 20%,40% 42%,48% 32%,66% 68%,81% 40%,100% 68%,100% 100%,0 100%)}.mountain.back{background:#687b77;clip-path:polygon(0 65%,14% 39%,22% 49%,44% 18%,61% 52%,69% 38%,85% 56%,100% 37%,100% 100%,0 100%);opacity:.9}.mountain.front{background:linear-gradient(125deg,#1d3431,#101d1a);clip-path:polygon(0 76%,17% 62%,27% 73%,47% 52%,61% 77%,74% 65%,100% 83%,100% 100%,0 100%)}.stage:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#0003,transparent 45%,#000c)}.stage-head{display:flex;justify-content:space-between;padding:25px 28px;align-items:center;font-size:12px}.stage-title{display:flex;align-items:center;gap:12px}.file-icon{border:1px solid #ffffff55;border-radius:7px;padding:9px}.stage-title small{display:block;color:#d3d8cf;font-size:10px;margin-top:5px}.quality{border:1px solid #ffffff44;padding:6px 10px;border-radius:5px;font-size:10px;letter-spacing:1px}.scene-title{position:absolute;left:38px;top:164px}.scene-title small{font-size:10px;letter-spacing:4px;color:#e4e7dc}.scene-title h2{font:500 clamp(33px,5vw,62px)/1.1 'Space Grotesk',sans-serif;letter-spacing:-2px;margin-top:10px}.scene-title p{font-size:11px;letter-spacing:2px;margin-top:15px;color:#d4dbcf}.center-play{position:absolute;top:46%;left:70%;background:#ffffff18;border:1px solid #ffffff66;color:white;border-radius:50%;width:70px;height:70px;font-size:22px;backdrop-filter:blur(10px);transition:background .2s}.center-play:hover{background:#ffffff35}.controls{position:absolute;bottom:0;left:0;right:0;padding:26px 28px 20px}.timeline{width:100%;height:4px;accent-color:var(--lime);cursor:pointer;display:block;margin:0 0 17px}.control-row{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#dde2d5}.control-group{display:flex;align-items:center;gap:20px}.icon-button{background:none;border:0;color:inherit;padding:5px;min-width:29px;font-size:14px}.play-small{color:var(--lime)}.time{font-variant-numeric:tabular-nums;color:#bdc7b6}.concept{position:absolute;right:26px;bottom:115px;color:#ffffffa6;font-size:9px;letter-spacing:1.3px;text-transform:uppercase}.stage-foot{display:flex;align-items:center;justify-content:space-between;padding:17px 1px;font-size:10px;letter-spacing:1.5px;color:var(--muted)}.stage-foot span:last-child{color:var(--lime)}.strip{display:flex;justify-content:space-between;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:25px 0;margin-top:22px;font-size:12px;color:#b8beab;gap:20px;flex-wrap:wrap}.strip b{color:var(--lime);margin-right:9px;font-weight:400}.section{padding:87px 0 0}.section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:31px}.eyebrow{font-size:10px;letter-spacing:2px;color:var(--lime);text-transform:uppercase;margin-bottom:17px}h2{font:500 clamp(32px,4vw,49px)/1.08 'Space Grotesk',sans-serif;letter-spacing:-2px}.section-heading p{max-width:300px;font-size:13px;line-height:1.8;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.card{border:1px solid var(--line);background:var(--panel);border-radius:13px;padding:27px;min-height:212px;position:relative;overflow:hidden;transition:transform .2s,border-color .2s}.card:hover{transform:translateY(-4px);border-color:#819454}.card .symbol{color:var(--lime);font:400 25px 'Space Grotesk',sans-serif;margin-bottom:30px}.card .num{position:absolute;top:29px;right:25px;color:#626956;font-size:10px}.card h3{font:500 18px 'Space Grotesk',sans-serif;margin-bottom:10px;letter-spacing:-.4px}.card p{font-size:12px;line-height:1.8;color:var(--muted)}.formats{display:flex;justify-content:space-between;align-items:center;gap:28px;padding:27px 0;border-bottom:1px solid var(--line);margin-top:13px}.formats p{font-size:12px;color:var(--muted)}.tags{display:flex;gap:8px;flex-wrap:wrap}.tags span{font-size:10px;border:1px solid var(--line);border-radius:5px;padding:8px 11px;color:#c7cdbb}.install{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px}.install-intro p{font-size:13px;line-height:1.8;color:var(--muted);margin-top:20px;max-width:320px}.steps{list-style:none;padding:0;margin:0}.steps li{display:flex;gap:20px;padding:23px 0;border-bottom:1px solid var(--line)}.steps li:first-child{padding-top:0}.step-number{font:400 12px 'Space Grotesk',sans-serif;color:var(--lime);padding-top:4px}.steps h3{font-size:15px;font-weight:500;margin-bottom:8px}.steps p{font-size:12px;line-height:1.8;color:var(--muted)}.faq{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px}details{border-bottom:1px solid var(--line);padding:21px 0}details:first-child{padding-top:0}summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-size:14px}summary::-webkit-details-marker{display:none}summary:after{content:'+';color:var(--lime)}details[open] summary:after{content:'−'}details p{font-size:12px;line-height:1.8;color:var(--muted);margin-top:15px}.final{margin:88px 0 0;background:var(--lime);color:#1b250d;border-radius:15px;padding:50px;display:flex;align-items:center;justify-content:space-between;gap:30px;position:relative;overflow:hidden}.final .eyebrow{color:#4c622e}.final h2{font-size:48px;position:relative}.final p{font-size:13px;margin-top:14px;color:#485a2a}.final .button{background:#17200e;color:var(--lime);border-color:#17200e;white-space:nowrap}.footer{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:34px 0;font-size:10px;color:var(--muted)}.footer .brand{font-size:17px}.footer .logo{width:25px;height:25px;font-size:12px;border-radius:7px}.footer-links{display:flex;gap:20px}.status{font-size:10px;min-height:15px;color:var(--lime);position:absolute;left:28px;bottom:114px}.reveal{animation:rise .8s ease both}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-@media(min-width:1500px){.hero{padding-top:85px}.stage{min-height:510px}}@media(max-width:950px){.wrap{padding:0 26px}h1{letter-spacing:-4px}.hero-aside{max-width:240px}.grid{grid-template-columns:repeat(2,1fr)}.install,.faq{gap:40px}.final{padding:34px}.final h2{font-size:38px}.links{gap:18px}.stage{min-height:430px}}@media(max-width:640px){.wrap{padding:0 20px}.nav{height:76px}.links>a:not(.small-cta){display:none}.brand{font-size:21px}.hero{padding-top:38px}.hero-top{display:block;margin-top:22px}h1{font-size:64px;letter-spacing:-4px}.hero-aside{max-width:100%;margin-top:25px}.hero-aside p{max-width:340px}.stage{min-height:370px;border-radius:12px}.scene-title{left:23px;top:135px}.scene-title h2{font-size:38px}.scene-title small{letter-spacing:2px;font-size:8px}.scene-title p{font-size:8px}.center-play{left:auto;right:24px;top:46%;width:51px;height:51px;font-size:17px}.stage-head{padding:19px}.controls{padding:20px 16px}.control-group{gap:9px}.control-group .optional{display:none}.concept{right:18px;bottom:103px;font-size:8px}.status{left:18px;bottom:103px}.stage-foot{font-size:8px;letter-spacing:.6px}.strip{gap:18px;font-size:10px;justify-content:flex-start}.section{padding-top:61px}.section-heading{display:block}.section-heading p{margin-top:18px}.grid{grid-template-columns:1fr}.card{min-height:180px;padding:23px}.card .symbol{margin-bottom:23px}.formats{align-items:flex-start;flex-direction:column;gap:16px}.install,.faq{grid-template-columns:1fr;gap:30px}.install-intro p{max-width:100%}.final{margin-top:60px;padding:30px 25px;display:block}.final h2{font-size:39px}.final .button{margin-top:25px}.footer{flex-wrap:wrap}.footer>p{order:3;width:100%;line-height:1.7}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+:root{--bg:#050510;--bg2:#0a0a1a;--card:rgba(15,15,35,0.6);--border:rgba(255,255,255,0.06);--border-h:rgba(108,92,231,0.4);--text:#f0f0ff;--muted:#8888aa;--accent:#6c5ce7;--accent2:#a855f7;--accent3:#06b6d4;--ok:#10b981;--glass:rgba(255,255,255,0.03)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+#particles{position:fixed;inset:0;z-index:0;pointer-events:none}
+.glow{position:fixed;border-radius:50%;filter:blur(120px);opacity:.4;z-index:0;pointer-events:none;animation:drift 20s ease-in-out infinite alternate}
+.g1{width:600px;height:600px;top:-200px;right:-100px;background:var(--accent)}.g2{width:500px;height:500px;bottom:-200px;left:-200px;background:var(--accent2)}.g3{width:400px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--accent3);opacity:.15;animation-delay:-10s}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(30px,-40px) scale(1.1)}}
+body::before{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;position:sticky;top:0;z-index:100;backdrop-filter:blur(20px) saturate(1.8);-webkit-backdrop-filter:blur(20px) saturate(1.8);background:rgba(5,5,16,0.7);border-bottom:1px solid var(--border);margin:0 -24px;padding-left:24px;padding-right:24px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;text-decoration:none;color:var(--text);letter-spacing:-0.02em}
+.logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;position:relative;overflow:hidden}
+.logo::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 40%,rgba(255,255,255,0.3))}
+.logo svg{width:16px;height:16px;position:relative;z-index:1}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;padding:8px 14px;border-radius:10px;transition:all .2s}
+.nav-links a:hover{color:var(--text);background:var(--glass)}
+.nav-dl{background:linear-gradient(135deg,var(--accent),var(--accent2))!important;color:#fff!important;font-weight:600!important;padding:8px 20px!important;box-shadow:0 4px 20px rgba(108,92,231,0.4)}
+.nav-dl:hover{transform:translateY(-1px);box-shadow:0 6px 30px rgba(108,92,231,0.5)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:60px 0 80px;min-height:85vh}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--accent);border:1px solid rgba(108,92,231,0.25);padding:7px 16px;border-radius:99px;margin-bottom:20px;background:rgba(108,92,231,0.08);backdrop-filter:blur(10px)}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pulse-dot 2s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(16,185,129,0.4)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(16,185,129,0)}}
+h1{font-size:clamp(42px,6.5vw,72px);line-height:1.02;font-weight:900;letter-spacing:-0.035em;margin-bottom:20px}
+.gradient-text{background:linear-gradient(135deg,#6c5ce7 0%,#a855f7 40%,#06b6d4 80%,#6c5ce7 100%);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradient-shift 8s ease infinite}
+@keyframes gradient-shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.lead{font-size:18px;color:var(--muted);max-width:480px;margin-bottom:32px;line-height:1.7}
+.cta-group{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:16px;padding:16px 32px;border-radius:16px;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 8px 32px rgba(108,92,231,0.4),inset 0 1px 0 rgba(255,255,255,0.15);transition:all .25s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}
+.btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.2),transparent);opacity:0;transition:opacity .25s}
+.btn-primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 44px rgba(108,92,231,0.5)}
+.btn-primary:hover::before{opacity:1}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:16px;padding:16px 28px;border-radius:16px;color:var(--text);background:var(--glass);border:1px solid var(--border);backdrop-filter:blur(10px);transition:all .25s}
+.btn-secondary:hover{border-color:var(--border-h);background:rgba(108,92,231,0.08);transform:translateY(-2px)}
+.trust-badges{display:flex;gap:20px;flex-wrap:wrap;margin-top:28px}
+.badge{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:14px;font-weight:500}
+.badge svg{color:var(--ok)}
+.phone-wrapper{display:flex;justify-content:center;perspective:1200px}
+.phone{width:min(300px,78%);aspect-ratio:9/19;border-radius:40px;padding:8px;background:linear-gradient(145deg,#1a1a2e,#0d0d1a);border:1px solid rgba(255,255,255,0.08);box-shadow:0 0 0 1px rgba(255,255,255,0.05),0 25px 50px rgba(0,0,0,0.5),0 0 100px rgba(108,92,231,0.15),inset 0 1px 0 rgba(255,255,255,0.05);animation:phone-float 6s ease-in-out infinite;transform-style:preserve-3d}
+@keyframes phone-float{0%,100%{transform:translateY(0) rotateX(2deg) rotateY(-3deg)}50%{transform:translateY(-16px) rotateX(-1deg) rotateY(2deg)}}
+.screen{height:100%;border-radius:34px;overflow:hidden;position:relative;background:linear-gradient(165deg,#0f0f2d 0%,#1a0a30 40%,#0d1525 100%)}
+.notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:100px;height:28px;background:#000;border-radius:0 0 18px 18px;z-index:5}
+.screen-header{padding:38px 16px 12px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(255,255,255,0.5);font-weight:500}
+.screen-title{padding:0 16px;font-weight:700;font-size:13px;color:rgba(255,255,255,0.9);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.screen-art{margin:16px;aspect-ratio:1;border-radius:16px;background:linear-gradient(135deg,#6c5ce7,#a855f7,#06b6d4);background-size:200% 200%;animation:art-shift 6s ease infinite;display:grid;place-items:center;position:relative;overflow:hidden}
+.screen-art::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,0.2),transparent 60%)}
+@keyframes art-shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.play-icon-big{width:44px;height:44px;position:relative;z-index:1;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.3))}
+.screen-info{padding:12px 16px 4px;font-size:14px;font-weight:700;color:rgba(255,255,255,0.9)}
+.screen-artist{padding:0 16px;font-size:11px;color:rgba(255,255,255,0.4)}
+.progress-bar{margin:14px 16px 0;height:4px;border-radius:4px;background:rgba(255,255,255,0.1);position:relative;overflow:hidden}
+.progress-fill{width:35%;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));position:relative;animation:progress-anim 8s linear infinite}
+@keyframes progress-anim{0%{width:20%}100%{width:80%}}
+.progress-fill::after{content:'';position:absolute;right:-4px;top:-3px;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 10px rgba(108,92,231,0.8)}
+.screen-times{display:flex;justify-content:space-between;padding:6px 16px 0;font-size:10px;color:rgba(255,255,255,0.3)}
+.screen-controls{display:flex;justify-content:center;align-items:center;gap:28px;padding:12px 0}
+.ctrl-btn{color:rgba(255,255,255,0.5);font-size:18px}
+.ctrl-play{width:50px;height:50px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+section{padding:60px 0}
+.eyebrow{font-size:13px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px}
+h2{font-size:clamp(28px,4.5vw,44px);font-weight:800;letter-spacing:-0.025em;margin-bottom:10px}
+.section-desc{color:var(--muted);max-width:520px;margin-bottom:36px;font-size:16px}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feature-card{background:var(--card);backdrop-filter:blur(20px);border:1px solid var(--border);border-radius:20px;padding:28px;transition:all .35s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;cursor:default}
+.feature-card::before{content:'';position:absolute;inset:0;border-radius:20px;padding:1px;background:linear-gradient(135deg,transparent 30%,rgba(108,92,231,0.3),transparent 70%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s}
+.feature-card:hover{transform:translateY(-6px);border-color:var(--border-h);box-shadow:0 20px 60px rgba(108,92,231,0.12)}
+.feature-card:hover::before{opacity:1}
+.feature-icon{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px;font-size:22px}
+.feature-icon.v{background:linear-gradient(135deg,rgba(108,92,231,0.2),rgba(108,92,231,0.05));color:#a78bfa}
+.feature-icon.m{background:linear-gradient(135deg,rgba(168,85,247,0.2),rgba(168,85,247,0.05));color:#c084fc}
+.feature-icon.s{background:linear-gradient(135deg,rgba(6,182,212,0.2),rgba(6,182,212,0.05));color:#22d3ee}
+.feature-icon.t{background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(16,185,129,0.05));color:#34d399}
+.feature-icon.c{background:linear-gradient(135deg,rgba(251,146,60,0.2),rgba(251,146,60,0.05));color:#fb923c}
+.feature-icon.p{background:linear-gradient(135deg,rgba(244,63,94,0.2),rgba(244,63,94,0.05));color:#fb7185}
+.feature-card h3{font-size:18px;font-weight:700;margin-bottom:6px}
+.feature-card p{color:var(--muted);font-size:15px;line-height:1.6}
+.formats-wrap{display:flex;flex-wrap:wrap;gap:10px}
+.format-tag{padding:10px 20px;border-radius:12px;background:var(--card);backdrop-filter:blur(10px);border:1px solid var(--border);color:var(--muted);font-size:14px;font-weight:600;transition:all .25s;cursor:default}
+.format-tag:hover{border-color:var(--border-h);color:var(--text);background:rgba(108,92,231,0.08);transform:translateY(-2px)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step}
+.step-card{background:var(--card);backdrop-filter:blur(20px);border:1px solid var(--border);border-radius:20px;padding:24px;position:relative;transition:all .3s}
+.step-card:hover{border-color:var(--border-h);transform:translateY(-4px)}
+.step-num{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;font-weight:800;font-size:14px;margin-bottom:14px;box-shadow:0 4px 16px rgba(108,92,231,0.3)}
+.step-card h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.step-card p{color:var(--muted);font-size:14px}
+.faq-item{background:var(--card);backdrop-filter:blur(20px);border:1px solid var(--border);border-radius:16px;margin-bottom:10px;overflow:hidden;transition:border-color .3s}
+.faq-item:hover{border-color:var(--border-h)}
+.faq-item summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center;transition:color .2s}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:22px;font-weight:300;color:var(--accent);transition:transform .3s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{padding:0 22px 18px;color:var(--muted);font-size:15px;line-height:1.7}
+.cta-final{text-align:center;border-radius:28px;padding:64px 24px;margin:40px 0;position:relative;overflow:hidden;border:1px solid var(--border)}
+.cta-final::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(108,92,231,0.12),rgba(168,85,247,0.08),rgba(6,182,212,0.06));z-index:0}
+.cta-final::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at center,rgba(108,92,231,0.08) 0%,transparent 60%);animation:cta-glow 10s ease-in-out infinite;z-index:0}
+@keyframes cta-glow{0%,100%{transform:translate(0,0)}50%{transform:translate(-5%,5%)}}
+.cta-final>*{position:relative;z-index:1}
+.cta-final h2{margin-bottom:10px}
+.cta-final p{color:var(--muted);max-width:400px;margin:0 auto 28px}
+footer{text-align:center;padding:36px 0 48px;color:var(--muted);font-size:14px;border-top:1px solid var(--border)}
+footer a{color:var(--accent);text-decoration:none}
+.stats-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 0}
+.stat{text-align:center;padding:24px;border-radius:20px;background:var(--card);backdrop-filter:blur(20px);border:1px solid var(--border)}
+.stat-num{font-size:36px;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat-label{font-size:14px;color:var(--muted);margin-top:4px}
+.cursor-glow{position:fixed;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(108,92,231,0.06) 0%,transparent 70%);pointer-events:none;z-index:1;transform:translate(-50%,-50%);transition:opacity .3s}
+@media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center;padding:40px 0 50px;min-height:auto}.lead{margin-left:auto;margin-right:auto}.cta-group,.trust-badges{justify-content:center}.features-grid{grid-template-columns:repeat(2,1fr)}.steps-grid{grid-template-columns:repeat(2,1fr)}.stats-bar{grid-template-columns:1fr}.phone{width:min(240px,60%)}}
+@media(max-width:600px){.features-grid{grid-template-columns:1fr}.steps-grid{grid-template-columns:1fr}.nav-links a:not(.nav-dl){display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+<div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
+<canvas id="particles"></canvas>
+<div class="cursor-glow" id="cursorGlow"></div>
 <div class="wrap">
-<nav class="nav" aria-label="Main navigation"><a class="brand" href="#top" aria-label="VXPlayer home"><span class="logo">▶</span>VXPlayer<span style="font-size:10px;color:var(--muted);letter-spacing:0;font-weight:400;margin-left:3px">/ ANDROID</span></a><div class="links"><a href="#features">The experience</a><a href="#install">How to install</a><a class="small-cta" href="https://github.com/wwwnayaksiba9591-lgtm/vxplayer-releases/releases/latest">Get VXPlayer ↗</a></div></nav>
-<main id="top">
-<header class="hero reveal"><div class="overline"><span class="dot"></span> Your files. Your front row.</div><div class="hero-top"><h1>Press play.<br><span>Stay there.</span></h1><div class="hero-aside"><p>Big-screen energy. Pocket-sized freedom. A home for your videos, music, and everything in between.</p><a class="button" href="https://github.com/wwwnayaksiba9591-lgtm/vxplayer-releases/releases/latest">Download for Android <span class="arrow">↗</span></a><div class="fine">EARLY RELEASE · APK VIA GITHUB</div></div></div>
-<div class="stage" aria-label="Interactive visual concept of the player, not a real video"><div class="landscape" aria-hidden="true"><div class="sun"></div><div class="mountain back"></div><div class="mountain"></div><div class="mountain front"></div></div><div class="stage-head"><div class="stage-title"><span class="file-icon" aria-hidden="true">▷</span><div>Somewhere beyond.mp4<small>VIDEO / LOCAL LIBRARY</small></div></div><span class="quality">PLAYER CONCEPT</span></div><div class="scene-title"><small>LESS SCROLLING. MORE FEELING.</small><h2>Find your<br>somewhere.</h2><p>A LITTLE ESCAPE. ON REPEAT.</p></div><button class="center-play" id="main-play" aria-label="Play interface demo">▶</button><span class="concept">Illustrated interface preview</span><div class="status" id="demo-status" role="status" aria-live="polite"></div><div class="controls"><label for="progress" class="fine" style="position:absolute;clip-path:inset(50%);width:1px;height:1px;overflow:hidden">Demo playback position</label><input class="timeline" type="range" id="progress" min="0" max="212" value="44"><div class="control-row"><div class="control-group"><button class="icon-button play-small" id="small-play" aria-label="Play interface demo">▶</button><button class="icon-button" id="rewind" aria-label="Rewind demo ten seconds">↶</button><span class="time"><span id="elapsed">00:44</span> <span style="opacity:.5">/ 03:32</span></span></div><div class="control-group"><button class="icon-button" id="speed" aria-label="Change demo speed">1×</button><span class="optional" aria-hidden="true">DEMO</span><button class="icon-button" id="fullscreen" aria-label="Toggle preview fullscreen">⛶</button></div></div></div></div><div class="stage-foot"><span>MADE FOR THE MOMENTS YOU HIT REPLAY.</span><span>MEET YOUR NEXT DAILY PLAYER ↙</span></div><div class="strip"><span><b>↗</b> Video + music</span><span><b>↗</b> Local files + streams</span><span><b>↗</b> Independent Android project</span><span><b>↗</b> Early release</span></div></header>
-<section class="section" id="features"><div class="section-heading"><div><div class="eyebrow">01 / The experience</div><h2>All the controls.<br>None of the clutter.</h2></div><p>A closer look at the feature set described for VXPlayer. Availability can vary by release and device.</p></div><div class="grid">
-<article class="card"><span class="num">01</span><div class="symbol" aria-hidden="true">▷</div><h3>A home for every video.</h3><p>Open local files or direct streams, and pick up where you left off with playback resume.</p></article>
-<article class="card"><span class="num">02</span><div class="symbol" aria-hidden="true">♫</div><h3>Your own soundtrack.</h3><p>Queues, playlists, and background playback keep your music close, even when the screen is off.</p></article>
-<article class="card"><span class="num">03</span><div class="symbol" aria-hidden="true">⌁</div><h3>Set your own pace.</h3><p>Playback speed, A–B repeat, a sleep timer, and equalizer controls. Small details. Big difference.</p></article>
-<article class="card"><span class="num">04</span><div class="symbol" aria-hidden="true">▤</div><h3>Don't miss a word.</h3><p>Choose subtitle and audio tracks, or keep your video in view with picture-in-picture.</p></article>
-<article class="card"><span class="num">05</span><div class="symbol" aria-hidden="true">▣</div><h3>Give it a bigger screen.</h3><p>Cast to compatible devices and choose hardware or software decoding for your playback.</p></article>
-<article class="card"><span class="num">06</span><div class="symbol" aria-hidden="true">↗</div><h3>Beyond your library.</h3><p>Open direct video links or explore the built-in web player with pop-up blocking.</p></article>
-</div><div class="formats"><p>From your folders to your favorite direct stream.</p><div class="tags"><span>MP4</span><span>MKV</span><span>WEBM</span><span>HLS / m3u8</span><span>DASH / mpd</span></div></div></section>
-<section class="section install" id="install"><div class="install-intro"><div class="eyebrow">02 / Get started</div><h2>Your next play.<br>Three steps away.</h2><p>VXPlayer is distributed as an APK on GitHub. Check the release notes and download the build you want to try.</p></div><ol class="steps"><li><span class="step-number">01</span><div><h3>Grab the latest release.</h3><p>Open the GitHub release page, expand Assets, and select the APK file.</p></div></li><li><span class="step-number">02</span><div><h3>Open your download.</h3><p>Tap the APK. If Android asks, allow this browser or file manager to install unknown apps.</p></div></li><li><span class="step-number">03</span><div><h3>Install. Open. Make it yours.</h3><p>Follow Android's prompts and review any security alerts before continuing. Keep Play Protect enabled. You can revoke the install permission afterward.</p></div></li></ol></section>
-<section class="section faq" id="questions"><div><div class="eyebrow">03 / Good to know</div><h2>A few things<br>before you play.</h2></div><div><details><summary>Where do I download VXPlayer?</summary><p>The download buttons open the project's latest GitHub release. Look under Assets for an APK, and read the release notes for build details.</p></details><details><summary>Is this the actual app interface?</summary><p>The interactive player above is a website design concept, with an illustrated landscape and simulated playback controls. It is not an app screenshot or a playable video.</p></details><details><summary>Will every video website work?</summary><p>Some sites restrict embedded playback or use DRM. Direct media files and compatible streams are the clearest starting point; support depends on the source and release.</p></details><details><summary>How do I get updates?</summary><p>Return to the same GitHub release page and check the latest notes. Install a compatible update from the same trusted publisher.</p></details></div></section>
-<section class="final"><div><div class="eyebrow">Your screen. Your world.</div><h2>Good things<br>deserve a replay.</h2><p>Meet VXPlayer. Find your next favorite moment.</p></div><a class="button" href="https://github.com/wwwnayaksiba9591-lgtm/vxplayer-releases/releases/latest">Get VXPlayer <span class="arrow">↗</span></a></section>
-</main><footer class="footer"><a href="#top" class="brand"><span class="logo">▶</span>VXPlayer</a><p>Made by Siba. An independent project.</p><div class="footer-links"><a href="https://github.com/wwwnayaksiba9591-lgtm/vxplayer-releases">GitHub ↗</a><a href="#questions">Questions</a><a href="#top">Back to top ↑</a></div></footer></div>
+<nav>
+<a class="brand" href="#top"><span class="logo"><svg viewBox="0 0 24 24" fill="white"><polygon points="9,5 9,19 20,12"/></svg></span>VXPlayer</a>
+<div class="nav-links"><a href="#features">Features</a><a href="#install">Install</a><a href="#faq">FAQ</a><a class="nav-dl" href="https://github.com/wwwnayaksiba9591-lgtm/vxplayer-releases/releases/latest">Download</a></div>
+</nav>
+
+<header class="hero" id="top">
+<div>
+<span class="hero-badge"><span class="dot"></span> Free &amp; Open &bull; Android</span>
+<h1>Play everything.<br><span class="gradient-text">Beautifully.</span></h1>
+<p class="lead">A lightning-fast video &amp; music player for Android. Local files, streams, subtitles, casting &#8212; no ads, no tracking, ever.</p>
+<div class="cta-group">
+<a class="btn-primary" href="https://github.com/wwwnayaksiba9591-lgtm/vxplayer-releases/releases/latest">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+Download APK</a>
+<a class="btn-secondary" href="#features">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+Explore</a>
+</div>
+<div class="trust-badges">
+<span class="badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> No ads</span>
+<span class="badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> No tracking</span>
+<span class="badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> No sign-up</span>
+</div>
+</div>
+<div class="phone-wrapper"><div class="phone"><div class="screen">
+<div class="notch"></div>
+<div class="screen-header"><span>&#9666; Now Playing</span><span style="color:rgba(108,92,231,0.8)">&#9881;</span></div>
+<div class="screen-art"><svg class="play-icon-big" viewBox="0 0 24 24" fill="white"><polygon points="8,4 8,20 21,12"/></svg></div>
+<div class="screen-info">Cinematic_4K_Demo.mkv</div>
+<div class="screen-artist">Unknown Artist &#8226; 1080p HW</div>
+<div class="progress-bar"><div class="progress-fill"></div></div>
+<div class="screen-times"><span>1:23</span><span>4:07</span></div>
+<div class="screen-controls"><span class="ctrl-btn">&#9198;</span><span class="ctrl-play"><svg width="18" height="18" viewBox="0 0 24 24" fill="#111"><polygon points="8,4 8,20 21,12"/></svg></span><span class="ctrl-btn">&#9197;</span></div>
+</div></div></div>
+</header>
+
+<div class="stats-bar reveal">
+<div class="stat"><div class="stat-num">0 &#8377;</div><div class="stat-label">Completely Free</div></div>
+<div class="stat"><div class="stat-num">20+</div><div class="stat-label">Formats Supported</div></div>
+<div class="stat"><div class="stat-num">&#8734;</div><div class="stat-label">No Limits</div></div>
+</div>
+
+<section id="features">
+<div class="reveal"><p class="eyebrow">Features</p><h2>Packed with power</h2><p class="section-desc">Built from the ground up for buttery-smooth playback and intuitive controls.</p></div>
+<div class="features-grid">
+<div class="feature-card reveal"><div class="feature-icon v"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div><h3>Video Player</h3><p>Play local files, links, HLS &amp; DASH streams. Auto-resume right where you left off.</p></div>
+<div class="feature-card reveal"><div class="feature-icon m"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div><h3>Music Player</h3><p>Queue, playlists, Now Playing screen and background audio playback.</p></div>
+<div class="feature-card reveal"><div class="feature-icon s"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><h3>Smart Controls</h3><p>Speed control, A-B repeat, sleep timer, equalizer, and night mode.</p></div>
+<div class="feature-card reveal"><div class="feature-icon t"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Subtitles &amp; Audio</h3><p>Switch tracks instantly. Picture-in-Picture mode fully supported.</p></div>
+<div class="feature-card reveal"><div class="feature-icon c"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/><line x1="2" y1="20" x2="2.01" y2="20"/></svg></div><h3>Cast to TV</h3><p>Cast video to your TV, take screenshots, toggle HW/SW decoding on the fly.</p></div>
+<div class="feature-card reveal"><div class="feature-icon p"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Shield Mode</h3><p>Built-in pop-up &amp; ad blocker for the web player. Browse without annoyances.</p></div>
+</div></section>
+
+<section class="reveal"><p class="eyebrow">Streaming</p><h2>Paste a link, hit play</h2><p class="section-desc">Use Open URL for direct files and streams, or open any video page in the built-in web player.</p>
+<div class="formats-wrap"><span class="format-tag">MP4</span><span class="format-tag">MKV</span><span class="format-tag">WEBM</span><span class="format-tag">AVI</span><span class="format-tag">FLV</span><span class="format-tag">MOV</span><span class="format-tag">HLS &#183; m3u8</span><span class="format-tag">DASH &#183; mpd</span><span class="format-tag">MP3</span><span class="format-tag">FLAC</span><span class="format-tag">AAC</span><span class="format-tag">OGG</span><span class="format-tag">Web pages</span></div></section>
+
+<section id="install"><div class="reveal"><p class="eyebrow">Install</p><h2>Ready in under a minute</h2><p class="section-desc">VXPlayer is shared as an APK &#8212; just one quick Android setting.</p></div>
+<div class="steps-grid">
+<div class="step-card reveal"><div class="step-num">1</div><h3>Download</h3><p>Tap the Download button &#8212; grab the APK from Assets.</p></div>
+<div class="step-card reveal"><div class="step-num">2</div><h3>Open the file</h3><p>Tap the downloaded APK from your notifications or files.</p></div>
+<div class="step-card reveal"><div class="step-num">3</div><h3>Allow once</h3><p>Enable &#34;Install unknown apps&#34; when prompted by Android.</p></div>
+<div class="step-card reveal"><div class="step-num">4</div><h3>Install anyway</h3><p>If Play Protect warns, just tap &#34;Install anyway&#34; &#8212; it&#39;s safe.</p></div>
+</div></section>
+
+<section id="faq"><div class="reveal"><p class="eyebrow">FAQ</p><h2>Got questions?</h2></div>
+<div class="reveal">
+<details class="faq-item"><summary>Is VXPlayer really free?</summary><p>100% free. No ads, no in-app purchases, no tracking, and no account required. Just download and play.</p></details>
+<details class="faq-item"><summary>Why does Play Protect show a warning?</summary><p>Since VXPlayer isn&#39;t on the Play Store yet, Android shows a standard caution for APK installs. The app is completely safe.</p></details>
+<details class="faq-item"><summary>Does it work with every website?</summary><p>Most video sites work great. However, some platforms use strict DRM or actively block embedded players, so results may vary.</p></details>
+<details class="faq-item"><summary>How do I update VXPlayer?</summary><p>Simply download the latest APK from the same GitHub releases link. Install it over the existing version &#8212; your settings are preserved.</p></details>
+<details class="faq-item"><summary>Is my data safe?</summary><p>Absolutely. VXPlayer doesn&#39;t collect any data, has no analytics, and doesn&#39;t phone home. Everything stays on your device.</p></details>
+</div></section>
+
+<div class="cta-final reveal">
+<h2>Ready to <span class="gradient-text">level up</span> your player?</h2>
+<p>Early version &#8212; your feedback shapes what comes next.</p>
+<a class="btn-primary" href="https://github.com/wwwnayaksiba9591-lgtm/vxplayer-releases/releases/latest">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+Download Latest APK</a>
+</div>
+
+<footer><p>Made with &#9829; by <strong>Siba</strong> &#183; VXPlayer is an independent project</p><p style="margin-top:8px;opacity:0.5"><a href="https://github.com/wwwnayaksiba9591-lgtm/vxplayer-releases">GitHub</a></p></footer>
+</div>
+
 <script>
-(()=>{'use strict';const main=document.querySelector('#main-play'),small=document.querySelector('#small-play'),progress=document.querySelector('#progress'),elapsed=document.querySelector('#elapsed'),status=document.querySelector('#demo-status'),speed=document.querySelector('#speed');let playing=false,rate=1,timer;function render(){const n=Number(progress.value);elapsed.textContent=String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0')}function setPlaying(value){playing=value;clearInterval(timer);for(const button of [main,small]){button.textContent=playing?'Ⅱ':'▶';button.setAttribute('aria-label',(playing?'Pause':'Play')+' interface demo')}status.textContent=playing?'Interface demo · simulated playback':'Demo paused';if(playing)timer=setInterval(()=>{progress.value=Math.min(212,Number(progress.value)+rate);render();if(Number(progress.value)>=212)setPlaying(false)},1000)}for(const button of [main,small])button.addEventListener('click',()=>{if(Number(progress.value)>=212)progress.value=0;setPlaying(!playing)});progress.addEventListener('input',render);document.querySelector('#rewind').addEventListener('click',()=>{progress.value=Math.max(0,Number(progress.value)-10);render()});speed.addEventListener('click',()=>{rate=rate===1?2:1;speed.textContent=rate+'×';speed.setAttribute('aria-label','Demo speed '+rate+' times. Click to change')});document.querySelector('#fullscreen').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else if(document.querySelector('.stage').requestFullscreen)await document.querySelector('.stage').requestFullscreen();else status.textContent='Fullscreen unavailable in this browser'}catch{status.textContent='Fullscreen unavailable in this browser'}});document.addEventListener('visibilitychange',()=>{if(document.hidden&&playing)setPlaying(false)});render()})();
-</script></body></html>
+(function(){const c=document.getElementById('particles'),x=c.getContext('2d');let w,h,ps=[];const n=60;function rs(){w=c.width=innerWidth;h=c.height=innerHeight}rs();addEventListener('resize',rs);class P{constructor(){this.r_()}r_(){this.x=Math.random()*w;this.y=Math.random()*h;this.vx=(Math.random()-.5)*.3;this.vy=(Math.random()-.5)*.3;this.r=Math.random()*1.5+.5;this.a=Math.random()*.3+.1}u(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>w||this.y<0||this.y>h)this.r_()}d(){x.beginPath();x.arc(this.x,this.y,this.r,0,Math.PI*2);x.fillStyle='rgba(108,92,231,'+this.a+')';x.fill()}}for(let i=0;i<n;i++)ps.push(new P);function cn(){for(let i=0;i<ps.length;i++)for(let j=i+1;j<ps.length;j++){const dx=ps[i].x-ps[j].x,dy=ps[i].y-ps[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<150){x.beginPath();x.moveTo(ps[i].x,ps[i].y);x.lineTo(ps[j].x,ps[j].y);x.strokeStyle='rgba(108,92,231,'+(0.06*(1-d/150))+')';x.lineWidth=.5;x.stroke()}}}function an(){x.clearRect(0,0,w,h);ps.forEach(p=>{p.u();p.d()});cn();requestAnimationFrame(an)}an()})();
+(function(){const g=document.getElementById('cursorGlow');document.addEventListener('mousemove',e=>{g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'})})();
+(function(){const els=document.querySelectorAll('.reveal');const obs=new IntersectionObserver(entries=>{entries.forEach((entry,i)=>{if(entry.isIntersecting){setTimeout(()=>entry.target.classList.add('visible'),i*80);obs.unobserve(entry.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});els.forEach(el=>obs.observe(el))})();
+(function(){const nav=document.querySelector('nav');let t=false;addEventListener('scroll',()=>{if(!t){requestAnimationFrame(()=>{nav.style.borderBottomColor=scrollY>50?'rgba(108,92,231,0.15)':'rgba(255,255,255,0.06)';t=false});t=true}})})();
+(function(){document.querySelectorAll('.feature-card').forEach(card=>{card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();const rx=(e.clientY-r.top-r.height/2)/20;const ry=(r.width/2-(e.clientX-r.left))/20;card.style.transform='translateY(-6px) perspective(1000px) rotateX('+rx+'deg) rotateY('+ry+'deg)'});card.addEventListener('mouseleave',()=>{card.style.transform=''})})})();
+</script>
+</body>
+</html>
