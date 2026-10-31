@@ -41,9 +41,26 @@ Built from scratch with Kotlin, Jetpack Compose and Media3.
 - Queue, playlists and a Now Playing screen
 - Background playback with notification controls
 
-### 🌐 Open URL and web player
-- Paste a link to play it directly
-- Video web pages open in a built-in web player
+### 🌐 Stream and URL playback
+- Paste any video link in **Open URL** and play it with the native player
+- Supports direct files, **HLS (.m3u8)** and **DASH (.mpd)** streams
+- Video web pages open in a built-in **web player** with fullscreen support
+- Auto mode detects whether a link is a media file or a web page
+
+### 🛡️ Shield protection
+- Pop-up windows opened by web pages are blocked
+- Web pages cannot open other apps without your permission
+- Stream and web links are opened inside VXPlayer, not handed to other apps
+
+---
+
+## 🔒 Privacy
+
+- **No ads** inside the app
+- **No analytics or tracking** libraries
+- **No account or sign-up** needed
+- Your videos and music stay on your device. Nothing is uploaded.
+- Internet is used only for links you open yourself, and for casting
 
 ---
 
@@ -77,3 +94,5 @@ Built from scratch with Kotlin, Jetpack Compose and Media3.
 <div align="center">
 
 Made by **Siba**
+
+</div>
